@@ -1,51 +1,61 @@
+# Emotion-Based Music Recommender
 
-# Emotion-based music recommendation system
+A Streamlit app that detects your facial emotion through webcam capture and recommends songs that match your current mood.
 
-This web-based app written in Python will first scan your current emotion with the help of OpenCV & then crop the image of your face from the entire frame once the cropped image is ready it will give this image to a trained MACHINE LEARNING model to predict the emotion of the cropped image. This will happen 30-40 times in 2-3 seconds, now once we have a list of emotions (containing duplicate elements) with us it will first sort the list based on frequency & remove the duplicates. After performing all the above steps we will have a list containing the user's emotions in sorted order, Now we have to iterate over the list & recommend songs based on emotions in the list.
+## What Is Improved
 
+- In-app webcam preview (no separate OpenCV popup window).
+- Retry-friendly scan flow with camera warm-up.
+- Confidence-based filtering for emotion predictions.
+- Adjustable scan controls from sidebar:
+  - scan frame count
+  - warm-up frame count
+  - confidence threshold
+  - minimum valid predictions
+  - number of recommendations
+- Emotion analytics section:
+  - dominant emotion
+  - face-detected frame count
+  - valid prediction count
+  - emotion distribution chart
+- Smarter recommendation mixing based on detected emotion strength.
+- Download recommendations as CSV.
+- Cleaner modern UI with cards, badges, and responsive layout.
 
-## Installation & Run
+## Project Files
 
-Create a new project in Pycharm and add the above files. After that open the terminal and run the following command. This will install all the modules needed to run this app. 
+- `app.py` - Main Streamlit application.
+- `model.h5` - Trained emotion model weights.
+- `dev_frontalface_default.xml` - Face detection Haar cascade.
+- `muse_v3.csv` - Song metadata dataset.
+- `requirements.txt` - Python dependencies.
+
+## Setup
 
 ```bash
-  pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
-To run the app, type the following command in the terminal. 
+## Run
+
 ```bash
-  streamlit run app.py
+streamlit run app.py
 ```
 
-## Libraries
+## Usage
 
-- Streamlit
-- Opencv
-- Numpy
-- Pandas
-- Tensorflow
-- Keras
+1. Open the app in your browser.
+2. (Optional) Tune scan controls from the sidebar.
+3. Click `Scan Emotion`.
+4. If needed, click `Retry Scan`.
+5. View emotion insights and recommended songs.
+6. Export playlist using `Download Recommendations (CSV)`.
 
+## Notes
 
+- Good lighting and a centered face improve accuracy.
+- If scan quality is weak, the app falls back to neutral recommendations.
 
-
-
-## Demo video
-
- [Emotion-based music recommendation system](
-
-https://github.com/Hiralsathwara/Emotion-based-music-recommendation-system/assets/127468119/5b2626f6-68fe-499c-9c3e-56b37f7c5d26
-
-)
- 
-
-## Authors
+## Author
 
 - [Dev Dahiya](https://github.com/Dev123dahiya)
-
-
-
-## Support
-
-For support,dev dahiya (+91-7404512322)
-
